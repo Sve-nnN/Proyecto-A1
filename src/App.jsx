@@ -34,16 +34,18 @@ function App() {
           Manual
         </button>
       </div>
-      <div className="flex justify-center gap-5">
-        <Automatic conjunto={A} conjuntoEjemplo={conjuntoEjemplo} />
-      </div>
-      <p>
+      <div className="flex justify-center gap-5  flex-col">
         {automatico ? (
-          <Automatic conjunto={A} conjuntoEjemplo={conjuntoEjemplo} />
+          <Automatic
+            conjunto={A}
+            conjuntoEjemplo={conjuntoEjemplo}
+            R={R}
+            M={M}
+          />
         ) : (
           <></>
         )}
-      </p>
+      </div>
     </div>
   );
 }
