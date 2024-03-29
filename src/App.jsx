@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Automatic from "./components/automatic";
+import ContenedorCentrado from "./components/centrar";
 import "./App.css";
 
 function App() {
@@ -13,7 +14,7 @@ function App() {
 
   console.log(A);
   return (
-    <div className="artboard artboard-horizontal phone-2 bg-slate-100 rounded ">
+    <ContenedorCentrado>
       <h1 className="text-2xl font-bold text-center text-gray-900">
         Relaciones
       </h1>
@@ -46,7 +47,7 @@ function App() {
           <></>
         )}
       </div>
-    </div>
+    </ContenedorCentrado>
   );
 }
 
