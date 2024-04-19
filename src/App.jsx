@@ -2,15 +2,15 @@ import { useState } from "react";
 import Automatic from "./components/automatic";
 import ContenedorCentrado from "./components/centrar";
 import "./App.css";
+import Manual from "./components/manual";
 
 function App() {
-  const [automatico, setAutomatico] = useState();
+  const [automatico, setAutomatico] = useState(null);
   //Declaramos los conjuntos
   let A = [];
   let conjuntoEjemplo = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
   let M = [3, 4, 5, 6];
   let R = [];
-  let generarAutomatico = false;
 
   console.log(A);
   return (
@@ -44,7 +44,7 @@ function App() {
             M={M}
           />
         ) : (
-          <></>
+          <Manual conjunto={A} conjuntoEjemplo={conjuntoEjemplo} R={R} M={M} />
         )}
       </div>
     </ContenedorCentrado>
