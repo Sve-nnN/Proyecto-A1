@@ -30,21 +30,21 @@ export default function generarConjuntoAutomatico({
       <div> n= {Math.floor(n)}</div>
       {/*Mostrar el conjunto A*/}
       <div>
-        A = [
+        A = &lbrace;
         {A.map((item, id) => (
           <span key={id}>{item};</span>
         ))}
-        ]
+        &rbrace;
       </div>
       {/*Mostrar la relacion R*/}
       <div>
-        R = [
+        R = &lbrace;
         {R.map((item, id) => (
           <span key={id}>
             ({item[0]},{item[1]}) ;
           </span>
         ))}
-        ]
+        &rbrace;
       </div>
       {/*Determinar si la relacion es reflexiva, simetrica o transitiva
       Relativa reflexiva: Si para cada elemento a de A, aRa.

@@ -49,20 +49,20 @@ export default function GenerarConjuntoManual({ A = [], R = [], M }) {
         <>
           <div>n={n}</div>
           <div>
-            A = [
+            A = &lbrace;
             {A.map((item, id) => (
               <span key={id}>{item};</span>
             ))}
-            ]
+            &rbrace;
           </div>
           <div>
-            R = [
+            R = &lbrace;
             {R.map((item, id) => (
               <span key={id}>
                 ({item[0]},{item[1]}) ;
               </span>
             ))}
-            ]
+            &rbrace;
           </div>
           {
             //Determinar si la relacion es reflexiva, simetrica o transitiva
