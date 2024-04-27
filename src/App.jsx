@@ -36,6 +36,8 @@ function App() {
         </button>
       </div>
       <div className="flex justify-center gap-5  flex-col">
+        <div className="divider divider-horizontal"></div>
+
         {automatico ? (
           <Automatic
             conjunto={A}

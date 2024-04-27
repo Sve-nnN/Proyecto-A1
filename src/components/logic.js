@@ -1,3 +1,4 @@
+import { useState } from "react";
 /*Relaciones:
 Definir un conjunto A de n elementos (de 4 a 7), los elementos se pueden
 elegir en forma aleatoria del conjunto {1,2,3,4,5,6,7,8,9,10,11,12} o
