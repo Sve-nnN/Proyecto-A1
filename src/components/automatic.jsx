@@ -20,6 +20,12 @@ export default function generarConjuntoAutomatico({
 
   A = generarConjunto(n, conjuntoEjemplo, A);
   R = generarRelacion(A, R, M);
+  let equivalencia = esEquivalencia(A, R);
+  let reflexiva = esReflexiva(A, R);
+  let simetrica = esSimetrica(A, R);
+  let transitiva = esTransitiva(A, R);
+  let clase = claseEquivalencia(A, R);
+
   /*
   -Verificar si la relacion es reflexiva, simetrica, transitiva (si la relacion
   es de equivalencia)
@@ -30,55 +36,58 @@ export default function generarConjuntoAutomatico({
       <div> n= {Math.floor(n)}</div>
       {/*Mostrar el conjunto A*/}
       <div>
-        A = &lbrace;
+        A = &#123;
         {A.map((item, id) => (
           <span key={id}>{item};</span>
         ))}
-        &rbrace;
+        &#125;
       </div>
       {/*Mostrar la relacion R*/}
       <div>
-        R = &lbrace;
+        R = &#123;
         {R.map((item, id) => (
           <span key={id}>
             ({item[0]},{item[1]}) ;
           </span>
         ))}
-        &rbrace;
+        &#125;
       </div>
       {/*Determinar si la relacion es reflexiva, simetrica o transitiva
       Relativa reflexiva: Si para cada elemento a de A, aRa.
       Relativa simétrica: Si para cada par de elementos a y b de A, aRb implica bRa.
       Relativa transitiva: Si para cada trío de elementos a, b y c de A, aRb y bRc implican aRc. */}
       <div>
-        {
-          //Propiedades de la relacion
-        }
         <p>
-          ¿La relacion es reflexiva?{" "}
-          <strong>{esReflexiva(A, R) ? "Si" : "No"}</strong>
+          ¿La relacion es reflexiva?
+          <strong>{reflexiva ? "Si" : "No"}</strong>
         </p>
-
         <p>
-          ¿La relacion es simetrica?{" "}
-          <strong>{esSimetrica(A, R) ? "Si" : "No"}</strong>
+          ¿La relacion es simetrica?
+          <strong>{simetrica ? "Si" : "No"}</strong>
         </p>
-
         <p>
-          ¿La relacion es transitiva?{" "}
-          <strong>{esTransitiva(A, R) ? "Si" : "No"}</strong>
+          ¿La relacion es transitiva?
+          <strong>{transitiva ? "Si" : "No"}</strong>
         </p>
       </div>
       <div>
         {
           //Determinar si la relacion es de equivalencia. Si es, muestra la clase de equivalencia
-          esEquivalencia(A, R) ? (
-            <>Es una relación de equivalencia: {claseEquivalencia(A, R)}</>
+          equivalencia ? (
+            <>
+              [R]=&#123;
+              {clase.map((clase, id) => (
+                <>
+                  <span key={id}>[{clase[0]}]</span>
+                </>
+              ))}
+              &#125;
+            </>
           ) : (
             "No es una relaciónn de equivalencia"
           )
         }
-      </div>{" "}
+      </div>
     </>
   );
 }

@@ -107,7 +107,12 @@ function mostrarElementosRyDeterminar(A, R, M) {
         {
           //Determinar si la relacion es de equivalencia. Si es, muestra la clase de equivalencia
           equivalencia ? (
-            <>Es una relación de equivalencia: {clase}</>
+            <>
+              [R]={" "}
+              {clase.map((clase, id) => (
+                <span key={id}>[{clase[0]}]</span>
+              ))}
+            </>
           ) : (
             "No es una relaciónn de equivalencia"
           )

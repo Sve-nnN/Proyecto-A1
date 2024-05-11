@@ -56,8 +56,13 @@ export function generarRelacion(A = [], R = [], M = []) {
 }
 export function generarConjunto(n, conjuntoEjemplo, A) {
   for (let i = 1; i <= n; i++) {
-    A.push(conjuntoEjemplo[Math.floor(Math.random() * 12)]);
+    let x = conjuntoEjemplo[Math.floor(Math.random() * 12)];
+    A.push(x);
   }
+  //Filtramos los duplicados
+  A = A.map(JSON.stringify);
+  A = [...new Set(A)];
+  A = A.map(JSON.parse);
   //Ordenamos de menor a mayor
   A.sort((a, b) => a - b);
   return A;
@@ -80,7 +85,7 @@ export function esReflexiva(A, R) {
 }
 export function esSimetrica(A, R) {
   let simetrica = true;
-  for (let i = 0; i < R.length; i++) {
+  for (let i = 0; i < R.length; i++) {  
     if (
       !R.find((element) => element[0] === R[i][1] && element[1] === R[i][0])
     ) {
@@ -121,7 +126,14 @@ export function claseEquivalencia(A, R) {
         clase.push(R[j][1]);
       }
     }
+
     clases.push(clase);
+    //Filtramos los duplicados
+    clases = clases.map(JSON.stringify);
+    clases = [...new Set(clases)];
+    clases = clases.map(JSON.parse);
+    //Ordenamos de menor a mayor
+    clases.sort((a, b) => a - b);
   }
 
   return clases;
