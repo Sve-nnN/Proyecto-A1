@@ -29,11 +29,11 @@ function imprimirElementosParaRelacion(A, R, M, text, setText) {
           console.log(R);
           aux = [];
           setText(
-            "✅ Elemento " + aux[0] + " " + aux[1] + " agregado con exito ✅"
+            "✅ Elemento agregado con exito ✅"
           );
         } else {
           aux = [];
-          setText("❌ Elemento " + aux[0] + " " + aux[1] + " no cumple ❌");
+          setText("❌ Elemento no cumple ❌");
         }
       }
     }
@@ -79,11 +79,18 @@ function mostrarElementosRyDeterminar(A, R, M) {
       </div>
       <div>
         R = &#123;
-        {R.map((item, id) => (
-          <span key={id}>
-            ({item[0]},{item[1]}) ;
-          </span>
-        ))}
+        {
+          R.map((item, id) => id + 1 == row.length ? (
+            <span key={id}>
+              ({item[0]},{item[1]})
+            </span>
+          ) : (
+            <span key={id}>
+              ({item[0]},{item[1]})
+            </span>
+          ))
+
+        }
         &#125;
       </div>
       {
