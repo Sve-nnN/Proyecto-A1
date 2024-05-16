@@ -37,19 +37,24 @@ export default function generarConjuntoAutomatico({
       {/*Mostrar el conjunto A*/}
       <div>
         A = &#123;
-        {A.map((item, id) => (
-          <span key={id}>{item};</span>
-        ))}
+        {A.map((item, id,row) => id+1==row.length?(
+          <span key={id}>{item} </span>
+        ):(<span key={id}>{item}; </span>))}
         &#125;
       </div>
       {/*Mostrar la relacion R*/}
       <div>
+      <div>
         R = &#123;
-        {R.map((item, id) => (
+        {R.map((item, id,row) => id+1==row.length?(
           <span key={id}>
-            ({item[0]},{item[1]}) ;
+            ({item[0]},{item[1]}) 
           </span>
-        ))}
+        ):(<span key={id}>
+          ({item[0]},{item[1]}) ;
+        </span>))}
+        &#125;
+      </div>
         &#125;
       </div>
       {/*Determinar si la relacion es reflexiva, simetrica o transitiva
