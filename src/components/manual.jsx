@@ -79,11 +79,13 @@ function mostrarElementosRyDeterminar(A, R, M) {
       </div>
       <div>
         R = &#123;
-        {R.map((item, id) => (
+        {R.map((item, id,row) => id+1==row.length?(
           <span key={id}>
-            ({item[0]},{item[1]}) ;
+            ({item[0]},{item[1]}) 
           </span>
-        ))}
+        ):(<span key={id}>
+          ({item[0]},{item[1]}) ;
+        </span>))}
         &#125;
       </div>
       {
