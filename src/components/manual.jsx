@@ -33,7 +33,7 @@ function imprimirElementosParaRelacion(A, R, M, text, setText) {
           );
         } else {
           aux = [];
-          setText("❌ Elemento no cumple ❌");
+          setText("❌ El elemento introducido no cumple ❌");
         }
       }
     }
@@ -114,7 +114,7 @@ function mostrarElementosRyDeterminar(A, R, M) {
               ))}
             </>
           ) : (
-            "No es una relaciónn de equivalencia"
+            "No es una relación de equivalencia"
           )
         }
       </div>
